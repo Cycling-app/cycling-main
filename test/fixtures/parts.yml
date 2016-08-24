@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  part_type: MyString
+  description: MyString
+  serial_number: MyString
+  bike_id: 1
+  distance_in_km: 1.5
+  lifetime_in_km: 1.5
+  lifetime_in_days: 1
+
+two:
+  part_type: MyString
+  description: MyString
+  serial_number: MyString
+  bike_id: 1
+  distance_in_km: 1.5
+  lifetime_in_km: 1.5
+  lifetime_in_days: 1

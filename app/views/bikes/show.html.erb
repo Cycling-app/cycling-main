@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Serial numberr:</strong>
+  <%= @bike.serial_numberr %>
+</p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @bike.make %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @bike.brand %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @bike.client_id %>
+</p>
+
+<p>
+  <strong>Bought on:</strong>
+  <%= @bike.bought_on %>
+</p>
+
+<%= link_to 'Edit', edit_bike_path(@bike) %> |
+<%= link_to 'Back', bikes_path %>

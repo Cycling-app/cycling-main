@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Part type:</strong>
+  <%= @part.part_type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @part.description %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @part.serial_number %>
+</p>
+
+<p>
+  <strong>Bike:</strong>
+  <%= @part.bike_id %>
+</p>
+
+<p>
+  <strong>Distance in km:</strong>
+  <%= @part.distance_in_km %>
+</p>
+
+<p>
+  <strong>Lifetime in km:</strong>
+  <%= @part.lifetime_in_km %>
+</p>
+
+<p>
+  <strong>Lifetime in days:</strong>
+  <%= @part.lifetime_in_days %>
+</p>
+
+<%= link_to 'Edit', edit_part_path(@part) %> |
+<%= link_to 'Back', parts_path %>
