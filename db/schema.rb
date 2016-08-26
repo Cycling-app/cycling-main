@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160824142508) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "tokens"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160824142508) do
     t.float    "distance_in_km"
     t.float    "lifetime_in_km"
     t.integer  "lifetime_in_days"
+    t.boolean  "is_expired"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end

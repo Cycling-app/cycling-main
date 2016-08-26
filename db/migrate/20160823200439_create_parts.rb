@@ -8,6 +8,7 @@ class CreateParts < ActiveRecord::Migration[5.0]
       t.float :distance_in_km
       t.float :lifetime_in_km
       t.integer :lifetime_in_days
+      t.boolean :is_expired, {default: false}
 
       t.timestamps
     end
