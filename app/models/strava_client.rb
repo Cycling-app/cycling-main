@@ -1,6 +1,6 @@
 class StravaClient
   def initialize
-    @api_client = Strava::Api::V3::Client.new(:access_token => "aa408b1d672cbbd0afe9993fcb5fb0a470b4672a")
+    @api_client = Strava::Api::V3::Client.new(:access_token => "token")
   end
 
   def update_mileage
