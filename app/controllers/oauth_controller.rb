@@ -1,11 +1,8 @@
 class OauthController < ApplicationController
-  include HTTParty
-  base_uri "https://www.strava.com/api"
+  # POST /oauth/strava
+  def create
+    @oauth = StravaOauth.new(params[:code])
 
-  def initialize(code)
-    @code = code
-  end
-
-  def get_strava_code
+    render json: {token: @oauth.get_strava_token}
   end
 end

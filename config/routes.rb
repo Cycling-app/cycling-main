@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   get 'welcome/index'
+  post '/oauth/strava' => "oauth#create"
 
   get 'sessions/new'
   get 'sessions/create'
@@ -16,5 +17,5 @@ Rails.application.routes.draw do
   resources :parts, except: [:new, :edit]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 end
