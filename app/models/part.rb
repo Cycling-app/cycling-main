@@ -1,3 +1,3 @@
 class Part < ApplicationRecord
-  belongs_to :bikes
+  belongs_to :bike
 end

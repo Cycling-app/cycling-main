@@ -57,6 +57,6 @@ class PartsController < ApplicationController
 
 
     def part_params
-      params.require(:part).permit(:part_type, :description, :serial_number, :bike_id, :distance_in_km, :lifetime_in_km, :lifetime_in_days)
+      params.require(:part).permit(:part_type, :description, :serial_number, :bike_id)
     end
 end
