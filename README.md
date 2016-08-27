@@ -1,7 +1,7 @@
 # Cycling App
 
 Sample JSON body for POST /bikes
-``` json
+```javascript
 {
   "bike":{
     "serial_number": "aaaaabbbbbccc123",
@@ -11,10 +11,22 @@ Sample JSON body for POST /bikes
     "bought_on": "2016-08-01"
   }
 }
-
 ```
-TODO change make to model
-TODO needs to have default integer, not null value
-  "distance_in_km": null,
-  "lifetime_in_km": null,
-  "lifetime_in_days": null,
+
+## Error Handling
+Sample JSON body for error messages
+
+```javascript
+{
+  "errors": {
+    "fields": {
+      "bike_id": [
+        "can't be blank"
+      ]
+    },
+    "full_messages": [
+      "Bike can't be blank"
+    ]
+  }
+}
+```
