@@ -13,6 +13,20 @@ Sample JSON body for POST /bikes
 }
 ```
 
+Sample JSON body for GET /clients
+```javascript
+{
+  "id": 1,
+  "first_name": "mike"
+  "last_name": "not mike"
+  "email": "email@email.email"
+  "password_digest": "blahblahblah"
+  "tokens": "this is a token 1234"
+  "created_at": "this is a date"
+  "updated_at": "also a date"
+}
+```
+
 Sample JSON body for GET /bikes
 ```javascript
  {
@@ -29,7 +43,14 @@ Sample JSON body for GET /bikes
 
 Sample JSON body for POST /parts
 ```javascript
-
+{
+  "part_type": "brakes"
+  "description": "disc"
+  "serial_number": "1454342asdasav"
+  "bike_id": 3
+  "mounted_on": "date"
+  "purchased_on": "other date"
+}
 ```
 
 Sample JSON body for GET /parts

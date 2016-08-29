@@ -3,6 +3,6 @@ class OauthController < ApplicationController
   def create
     @oauth = StravaOauth.new(params[:code])
 
-    render json: {token: @oauth.get_strava_token}
+    render json: { token: @oauth.get_strava_token }
   end
 end
