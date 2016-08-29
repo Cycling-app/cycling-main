@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20160824142508) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bikes", force: :cascade do |t|
     t.string   "serial_number"
     t.string   "model"
