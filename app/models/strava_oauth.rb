@@ -18,6 +18,6 @@ class StravaOauth
         code: @code
       }
     }
-    self.class.post("/oauth/strava", options)
+    self.class.post("/oauth/strava", options).to_json
   end
 end
