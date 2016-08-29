@@ -13,13 +13,11 @@ class StravaOauth
   def get_strava_token
     options = {
       body: {
-
         client_id: ENV["STRAVA_CLIENT_ID"],
         client_secret: ENV["STRAVA_CLIENT_SECRET"],
         code: @code
-
       }
     }
-    self.class.post("/oauth/token", options)
+    self.class.post("/oauth/strava", options)
   end
 end
