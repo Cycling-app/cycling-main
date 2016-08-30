@@ -21,9 +21,11 @@ class OauthController < ApplicationController
       last_name: client_info["athlete"]["lastname"],
       email: client_info["athlete"]["email"]
     )
-
-
-    client_info["client"] = @client
-    render json: client_info
+    if @client.save
+      client_info["client"] = @client
+      render json: client_info
+    else
+      render json_errors(@client)
+    end
   end
 end
