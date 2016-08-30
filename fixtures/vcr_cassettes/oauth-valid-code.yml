@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.strava.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: client_id=<%= ENV["STRAVA_CLIENT_ID"] %>&client_secret=<%= ENV["STRAVA_CLIENT_SECRET"] %>&code=4db91af1260b3f47af7f2dbb32fc95db9e13fc30
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 30 Aug 2016 20:16:38 GMT
+      Etag:
+      - W/"eb061327a7821eecc714eccb2296ae67"
+      Set-Cookie:
+      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJTkxNjBhM2UwNTM1NDhiOWFlNDY2NWQ1MjQ1NjVjMGYxBjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--89a25dbc4b47eba77b3547bead8e80e37a5a273e;
+        domain=strava.com; path=/; HttpOnly
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - ce433d62aff9b75521b42335a33493ee
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '475'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"7549577c5d2a8a55a8a0d8984c98b5df2a34f63b","token_type":"Bearer","athlete":{"id":17214024,"username":"schhatwal","resource_state":3,"firstname":"samina","lastname":"chhatwal","city":"Falls
+        Church","state":"Virginia","country":"United States","sex":"F","premium":false,"created_at":"2016-08-28T19:21:32Z","updated_at":"2016-08-30T15:59:36Z","badge_type_id":0,"profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/17214024/4854019/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/17214024/4854019/1/large.jpg","friend":null,"follower":null,"follower_count":0,"friend_count":0,"mutual_friend_count":0,"athlete_type":0,"date_preference":"%m/%d/%Y","measurement_preference":"feet","clubs":[],"email":"csaminak@yahoo.com","ftp":null,"weight":0.0,"bikes":[],"shoes":[]}}'
+    http_version:
+  recorded_at: Tue, 30 Aug 2016 20:16:38 GMT
+recorded_with: VCR 3.0.3

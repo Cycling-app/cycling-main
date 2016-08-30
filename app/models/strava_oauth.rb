@@ -1,6 +1,4 @@
 class StravaOauth
-  include HTTParty
-  base_uri "https://www.strava.com/"
   #     -X POST https://www.strava.com/oauth/token \
   #     -F client_id=5 \
   #     -F client_secret=7b2946535949ae70f015d696d8ac602830ece412 \
@@ -18,6 +16,6 @@ class StravaOauth
         code: @code
       }
     }
-    self.class.post("/oauth/token", options)
+    HTTParty.post("https://www.strava.com/oauth/token", options)
   end
 end

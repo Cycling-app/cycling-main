@@ -10,10 +10,6 @@ class PartsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get new" do
-    get new_part_url
-    assert_response :success
-  end
 
   test "should create part" do
     assert_difference('Part.count') do
@@ -25,11 +21,6 @@ class PartsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show part" do
     get part_url(@part)
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_part_url(@part)
     assert_response :success
   end
 

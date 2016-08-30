@@ -1,19 +1,24 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  part_type: MyString
-  description: MyString
-  serial_number: MyString
-  bike_id: 1
-  distance_in_km: 1.5
-  lifetime_in_km: 1.5
-  lifetime_in_days: 1
+  part_type: Tire
+  description: MyStrin
+  serial_number: MyStrin
+  bike: one
+  mounted_on: <%= 50.days.ago %>
+  purchased_on: <%= 100.days.ago %>
+  distance_in_km: 42.34
+  expected_lifetime_in_km: 1000
+  is_expired: false
+
 
 two:
-  part_type: MyString
-  description: MyString
-  serial_number: MyString
-  bike_id: 1
-  distance_in_km: 1.5
-  lifetime_in_km: 1.5
-  lifetime_in_days: 1
+  part_type: Brake
+  description: MyStrin
+  serial_number: MyStrin
+  bike: one
+  mounted_on: <%= 50.days.ago %>
+  purchased_on: <%= 100.days.ago %>
+  distance_in_km: 42.34
+  expected_lifetime_in_km: 1000
+  is_expired: false
