@@ -4,8 +4,8 @@ json.extract! part, :id,
   :serial_number,
   :bike_id,
   :distance_in_km,
-  :lifetime_in_km,
-  :lifetime_in_days,
+  :mounted_on,
+  :purchased_on,
   :created_at,
   :updated_at
 json.url part_url(part, format: :json)

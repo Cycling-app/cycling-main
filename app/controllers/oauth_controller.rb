@@ -22,7 +22,7 @@ class OauthController < ApplicationController
 
     # If the client changes their info on strava it will update our stored information?
       @client.assign_attributes(
-      tokens: client_info["access_token"],
+      token: client_info["access_token"],
       first_name: client_info["athlete"]["firstname"],
       last_name: client_info["athlete"]["lastname"],
       email: client_info["athlete"]["email"]

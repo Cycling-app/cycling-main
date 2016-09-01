@@ -6,43 +6,33 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get bikes_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_bike_url
+    get bikes_path( format: :json )
     assert_response :success
   end
 
   test "should create bike" do
-    assert_difference('Bike.count') do
-      post bikes_url, params: { bike: { bought_on: @bike.bought_on, brand: @bike.brand, client_id: @bike.client_id, make: @bike.make, serial_numberr: @bike.serial_numberr } }
+      assert_difference('Bike.count') do
+      post bikes_path( format: :json ), params: { bike: { name: @bike.name, bought_on: @bike.bought_on, brand: @bike.brand, client_id: @bike.client_id, model: @bike.model, serial_number: @bike.serial_number } }
     end
 
-    assert_redirected_to bike_url(Bike.last)
+    assert_redirected_to bike_path(Bike.last)
   end
 
   test "should show bike" do
-    get bike_url(@bike)
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_bike_url(@bike)
+    get bike_path(@bike)
     assert_response :success
   end
 
   test "should update bike" do
-    patch bike_url(@bike), params: { bike: { bought_on: @bike.bought_on, brand: @bike.brand, client_id: @bike.client_id, make: @bike.make, serial_numberr: @bike.serial_numberr } }
-    assert_redirected_to bike_url(@bike)
+    patch bike_path(@bike), params: { bike: { name: @bike.name, bought_on: @bike.bought_on, brand: @bike.brand, client_id: @bike.client_id, model: @bike.model, serial_number: @bike.serial_number } }
+    assert_redirected_to bike_path(@bike)
   end
 
   test "should destroy bike" do
-    assert_difference('Bike.count', -1) do
-      delete bike_url(@bike)
+      assert_difference('Bike.count', -1) do
+      delete bike_path(@bike)
     end
 
-    assert_redirected_to bikes_url
+    assert_redirected_to bikes_path
   end
 end

@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3//athlete/activities?access_token=aa408b1d672cbbd0afe9993fcb5fb0a470b4672a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 01 Sep 2016 15:58:37 GMT
+      Etag:
+      - W/"4b01c5d2135c755b84a8b5632f8b6d99"
+      Set-Cookie:
+      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJWI2OGEyMzVkYmIwYmQzMjE1NzEzYzhhZjc1NDU4NmNjBjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--16de4375e0210bbc219f5867ea80edae0c333809;
+        domain=strava.com; path=/; HttpOnly
+      Status:
+      - 200 OK
+      Strava-Athlete-Upload-Version:
+      - 06601d5cc629e7608fae1328def986e8
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Ratelimit-Usage:
+      - '1,2'
+      X-Request-Id:
+      - 863d4251ef159ece7b8dd4fb4bd4a8a7
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '622'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":694932688,"resource_state":2,"external_id":"6afa2560587d34a708cfd174f4f7240d","upload_id":765720308,"athlete":{"id":17113102,"resource_state":1},"name":"Evening
+        Ride","distance":3976.2,"moving_time":746,"elapsed_time":912,"total_elevation_gain":15.7,"type":"Ride","start_date":"2016-08-30T22:23:26Z","start_date_local":"2016-08-30T18:23:26Z","timezone":"(GMT-05:00)
+        America/New_York","start_latlng":[38.9,-77.03],"end_latlng":[38.91,-77.01],"location_city":null,"location_state":null,"location_country":"United
+        States","start_latitude":38.9,"start_longitude":-77.03,"achievement_count":0,"kudos_count":0,"comment_count":0,"athlete_count":1,"photo_count":0,"map":{"id":"a694932688","summary_polyline":"}illFnbduMYvOqD|LHlHy@fAuKlDeSJeIqB{Luc@}AiIN_G_DgCiXwhAtEyOo@S","resource_state":2},"trainer":false,"commute":true,"manual":false,"private":false,"flagged":false,"gear_id":null,"average_speed":5.33,"max_speed":13.0,"device_watts":false,"has_heartrate":false,"elev_high":28.3,"elev_low":12.2,"total_photo_count":0,"has_kudoed":false,"workout_type":10}]'
+    http_version:
+  recorded_at: Thu, 01 Sep 2016 15:58:37 GMT
+recorded_with: VCR 3.0.3
