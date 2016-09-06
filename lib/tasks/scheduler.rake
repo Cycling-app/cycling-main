@@ -1,4 +1,4 @@
-task :update_bike_info => :environment do
+task :update_bike_info => :production do
   Updater.new
 end
 
