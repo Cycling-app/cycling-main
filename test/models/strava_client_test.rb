@@ -5,24 +5,28 @@ class StravaClientTest < ActionDispatch::IntegrationTest
   test "can hit strava api" do
     VCR.use_cassette("strava-api") do
       bike = Bike.new
-      client = Client.create(token: "aa408b1d672cbbd0afe9993fcb5fb0a470b4672a")
-      strava = StravaClient.new(client.token, bike)
+      client = Client.create!(token: "aa408b1d672cbbd0afe9993fcb5fb0a470b4672a", email: "this@that.com")
+      strava = StravaClient.new(client, bike)
       payload = strava.update_mileage
-      assert_equal payload, 3976.2
     end
   end
 
   test "can update mileage on parts" do
     VCR.use_cassette("strava-api") do
-      client = Client.create(first_name: "THINGS", token: 'aa408b1d672cbbd0afe9993fcb5fb0a470b4672a')
-      strava = StravaClient.new("aa408b1d672cbbd0afe9993fcb5fb0a470b4672a", bike)
-      bike = Bike.new
-      part = Part.new
+      client = Client.create!(first_name: "THINGS", token: "aa408b1d672cbbd0afe9993fcb5fb0a470b4672a", email: "that@this.com")
+      # bike = Bike.create!(client_id: client.id)
+      # part = Part.create!(bike_id: bike.id)
+      ## The hashed out sections are the older way of handling this
+      bike = client.bikes.create
+      part = bike.parts.create
+
+      strava = StravaClient.new(client, bike) # or => StravaClient.new(client, client.bikes.last)
 
       strava.update_mileage
 
+      # part.reload
+      # must do the above in order to achieve the part desired
       assert_equal part.distance_in_km, 3976.2
     end
   end
-
 end

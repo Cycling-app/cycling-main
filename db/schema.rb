@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824142508) do
+ActiveRecord::Schema.define(version: 20160906130920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string  "activity"
+    t.integer "strava_id"
+    t.float   "mileage"
+    t.integer "client_id"
+    t.integer "bike_id"
+  end
 
   create_table "bikes", force: :cascade do |t|
     t.string   "name"
