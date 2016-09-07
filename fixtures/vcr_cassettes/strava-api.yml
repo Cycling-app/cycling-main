@@ -2,7 +2,55 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.strava.com/api/v3//athlete/activities?access_token=aa408b1d672cbbd0afe9993fcb5fb0a470b4672a
+    uri: https://www.strava.com/api/v3//athlete/activities?access_token=aa408b1d672cbbd0afe9993fcb5fb0a470b4672a&page=0&per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 07 Sep 2016 15:14:42 GMT
+      Set-Cookie:
+      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJTQ5MzM0YjkzN2E0MDIxZWM5YTRmNzk3N2UyMDgzMjM4BjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--1dbcb8b77a888f183fdac6630c636d4d286077c0;
+        domain=strava.com; path=/; HttpOnly
+      Status:
+      - 400 Bad Request
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Ratelimit-Usage:
+      - '1,131'
+      X-Request-Id:
+      - 5b5241340f1e9d9b2ed85c62e5eec19c
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '95'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"Bad Request","errors":[{"resource":"Application","field":"page","code":"invalid"}]}'
+    http_version: 
+  recorded_at: Wed, 07 Sep 2016 15:14:42 GMT
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3//athlete/activities?access_token=aa408b1d672cbbd0afe9993fcb5fb0a470b4672a&page=1&per_page=100
     body:
       encoding: US-ASCII
       string: ''
@@ -23,24 +71,24 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Thu, 01 Sep 2016 15:58:37 GMT
+      - Wed, 07 Sep 2016 15:33:10 GMT
       Etag:
       - W/"4b01c5d2135c755b84a8b5632f8b6d99"
       Set-Cookie:
-      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJWI2OGEyMzVkYmIwYmQzMjE1NzEzYzhhZjc1NDU4NmNjBjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--16de4375e0210bbc219f5867ea80edae0c333809;
+      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJWJhMjI3MDQ3MTRhMGQ3NGQ3YjBhZDc5MzQxNGM3OTNlBjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--c0b2f74ee3769b53611f376581b3d18fe72d743d;
         domain=strava.com; path=/; HttpOnly
       Status:
       - 200 OK
       Strava-Athlete-Upload-Version:
-      - 06601d5cc629e7608fae1328def986e8
+      - 469a8b10002544d5fe511fb4f922e3da
       X-Frame-Options:
       - DENY
       X-Ratelimit-Limit:
       - '600,30000'
       X-Ratelimit-Usage:
-      - '1,2'
+      - '1,132'
       X-Request-Id:
-      - 863d4251ef159ece7b8dd4fb4bd4a8a7
+      - 481efa7ec5f6c67d74013d9c2189bdeb
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -53,6 +101,6 @@ http_interactions:
         Ride","distance":3976.2,"moving_time":746,"elapsed_time":912,"total_elevation_gain":15.7,"type":"Ride","start_date":"2016-08-30T22:23:26Z","start_date_local":"2016-08-30T18:23:26Z","timezone":"(GMT-05:00)
         America/New_York","start_latlng":[38.9,-77.03],"end_latlng":[38.91,-77.01],"location_city":null,"location_state":null,"location_country":"United
         States","start_latitude":38.9,"start_longitude":-77.03,"achievement_count":0,"kudos_count":0,"comment_count":0,"athlete_count":1,"photo_count":0,"map":{"id":"a694932688","summary_polyline":"}illFnbduMYvOqD|LHlHy@fAuKlDeSJeIqB{Luc@}AiIN_G_DgCiXwhAtEyOo@S","resource_state":2},"trainer":false,"commute":true,"manual":false,"private":false,"flagged":false,"gear_id":null,"average_speed":5.33,"max_speed":13.0,"device_watts":false,"has_heartrate":false,"elev_high":28.3,"elev_low":12.2,"total_photo_count":0,"has_kudoed":false,"workout_type":10}]'
-    http_version:
-  recorded_at: Thu, 01 Sep 2016 15:58:37 GMT
+    http_version: 
+  recorded_at: Wed, 07 Sep 2016 15:33:11 GMT
 recorded_with: VCR 3.0.3

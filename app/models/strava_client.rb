@@ -8,9 +8,31 @@ class StravaClient
   end
 
   def update_mileage
-    @api_client.list_athlete_activities.each do |a|
-      a["distance"]
-      activity = Activity.create(
+    per_page = 100
+    current_page = 1
+    loop do
+      data = @api_client.list_athlete_activities(
+                            per_page: per_page,
+                            page: current_page
+                          )
+
+      save_activities(data)
+
+      if data.size == per_page
+        current_page += 1
+      else
+        break
+      end
+    end
+
+    apply_mileage
+    # I need to now add the activities to a client so that it puts them on the bike, and that bike's parts
+    # Are these new activties? Have I seen them before. (I need a way to remember the ids that I see)
+  end
+
+  def save_activities(activities_data)
+    activities_data.each do |a|
+      Activity.create(
         mileage: a["distance"],
         strava_id: a["id"],
         activity: a["type"],
@@ -18,15 +40,12 @@ class StravaClient
         bike_id: @bike.id
       )
     end
-
-    @bike.parts.each do |part|
-      part.distance_in_km = @bike.activities.sum(:mileage) / 1000
-      part.save
-    end
-
-    # I need to now add the activities to a client so that it puts them on the bike, and that bike's parts
-    # Are these new activties? Have I seen them before. (I need a way to remember the ids that I see)
   end
 
-
+   def apply_mileage
+     @bike.parts.each do |part|
+       part.distance_in_km = @bike.activities.where(activity: "Ride").sum(:mileage) / 1000
+       part.save
+     end
+   end
 end
