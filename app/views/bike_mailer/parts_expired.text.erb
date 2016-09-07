@@ -1,0 +1,18 @@
+  <%= @greeting %>,<%= @client.first_name %>
+                        
+    We've noticed you have been biking a lot!
+      Just a friendly reminder you have come up on the expected life time on some of your parts.
+
+      We recommend replacing parts for your bike, <%= @bike.name %>:
+
+      <% @part.each do |part| %>
+      <%= part.part_type %>, <%= part.description %>
+      <% end %>
+
+      Whether you replace them yourself or have a shop do the replacements for you,
+      we think that it may also be a good idea for you to have your bike <%= @bike.name %>
+      get a tune-up!
+
+
+  Sincerely,
+    Your friends from Bike-Memo!
