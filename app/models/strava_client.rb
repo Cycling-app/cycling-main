@@ -20,7 +20,7 @@ class StravaClient
     end
 
     @bike.parts.each do |part|
-      part.distance_in_km = @bike.activities.sum :mileage
+      part.distance_in_km = @bike.activities.sum(:mileage) / 1000
       part.save
     end
 
@@ -28,5 +28,5 @@ class StravaClient
     # Are these new activties? Have I seen them before. (I need a way to remember the ids that I see)
   end
 
-  
+
 end
