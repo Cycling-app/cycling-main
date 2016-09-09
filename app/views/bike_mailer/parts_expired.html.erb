@@ -1,5 +1,37 @@
-<h1>Bike#parts_expired</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+        <title>Bike-Memo Notification Email</title>
+    </head>
+    <body>
 
-<p>
-  <%= @greeting %>, find me in app/views/bike_mailer/parts_expired.html.erb
-</p>
+        <header>
+            <p><%= @greeting %>,<%= @client.first_name %></p>
+        </header>
+
+        <main>
+            <p>We've noticed you have been biking a lot!</p>
+            <p>Just a friendly reminder you have come up on the expected life time on some of your parts.</p>
+
+            <p>We recommend replacing parts for your bike, <%= @bike.name %>:</p>
+
+            <p><% @part.each do |part| %></p>
+            <p><%= part.part_type %>, <%= part.description %></p>
+            <p><% end %></p>
+
+            <p>
+                Whether you replace them yourself or have a shop do the replacements for you,
+                we think that it may also be a good idea for you to have your bike <%= @bike.name %>
+                get a tune-up!
+            </p>
+        </main>
+
+        <footer>
+            <p>Sincerely,</p>
+            <p>Your friends from Bike-Memo!</p>
+        </footer>
+
+    </body>
+</html>
