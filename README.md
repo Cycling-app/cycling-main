@@ -1,5 +1,9 @@
 # Cycling App
 
+This is a Final project for my cohort at the Iron Yard.
+
+The idea behind the application was so that i would have a way to know when it was actually time to go to the bike shop or buy a new part online.
+
 This API is for the maintenance of bikes, however is also a model for multiple types of exercise activities
 
 The use of STRAVA or some other application's API is necessary for collecting the data needed to track the wear and tear on parts of bikes or any other piece of equipment you are trying to track.
@@ -7,6 +11,8 @@ The use of STRAVA or some other application's API is necessary for collecting th
 If using STRAVA I highly recommend going to get the [Strava Gem](https://github.com/jaredholdcroft/strava-api-v3), there is very good documentation here and has a very easy to use format.
 
 You will also need to go to Strava and sign up to be a Developer on their site to be able to obtain a Client secret and a Developer Token.
+
+The .env file is being ignored please be sure to make your own and put your secrets there!
 
 ## Samples for JSON handling
 Sample JSON body for POST /bikes

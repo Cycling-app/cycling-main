@@ -14,7 +14,7 @@ class OauthControllerTest < ActionDispatch::IntegrationTest
     VCR.use_cassette("oauth-valid-code") do
       post oauth_strava_url, params: {code: '4db91af1260b3f47af7f2dbb32fc95db9e13fc30'}
       payload = JSON.parse(response.body)
-      assert_equal "7549577c5d2a8a55a8a0d8984c98b5df2a34f63b", payload["access_token"]
+      assert_equal ENV["RUSSELL'S_TOKEN"], payload["access_token"]
     end
   end
 
