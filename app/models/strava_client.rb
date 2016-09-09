@@ -26,8 +26,6 @@ class StravaClient
     end
 
     apply_mileage
-    # I need to now add the activities to a client so that it puts them on the bike, and that bike's parts
-    # Are these new activties? Have I seen them before. (I need a way to remember the ids that I see)
   end
 
   def save_activities(activities_data)

@@ -5,5 +5,8 @@ class Part < ApplicationRecord
   def expired?
     distance_in_km >= expected_lifetime_in_km
   end
- # Checks part for mileage on it against its expected lifetime
+
+  def email_sent?
+    email_sent 
+  end
 end

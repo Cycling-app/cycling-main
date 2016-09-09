@@ -9,8 +9,8 @@ class BikeMailer < ApplicationMailer
     @greeting = "Dear"
     @client = bike.client
     @bike = bike
-    @part = bike.expired_parts
-    
+    @part = bike.expired_parts_that_need_notification
+
     mail to: bike.client.email
   end
 end

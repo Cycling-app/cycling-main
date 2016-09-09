@@ -8,12 +8,22 @@ class Bike < ApplicationRecord
     parts.select{ |part| part.expired? }
   end
 
+  def expired_parts_that_need_notification
+    expired_parts.select{ |part| part.email_sent? != true }
+  end
+
   def send_part_notification
-    
-    unless expired_parts.empty?
+
+    unless expired_parts_that_need_notification.empty? #&& expired_parts
+
       BikeMailer.parts_expired(self).deliver_now
-    else
-      #do nothing
+
+      expired_parts_that_need_notification.each do |part|
+        part.email_sent = true
+        part.save!
+      end
+      # need a way to know the part or the bike
+      # (email_sent: true)
     end
 
 
