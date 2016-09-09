@@ -22,7 +22,6 @@ class Bike < ApplicationRecord
         part.email_sent = true
         part.save!
       end
-      # need a way to know the part or the bike
       # (email_sent: true)
     end
 

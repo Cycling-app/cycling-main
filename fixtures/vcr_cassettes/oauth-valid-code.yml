@@ -43,7 +43,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '{"access_token":"7549577c5d2a8a55a8a0d8984c98b5df2a34f63b","token_type":"Bearer","athlete":{"id":17214024,"username":"schhatwal","resource_state":3,"firstname":"samina","lastname":"chhatwal","city":"Falls
+      string: '{"access_token":ENV["RUSSELL'S_TOKEN"],"token_type":"Bearer","athlete":{"id":17214024,"username":"schhatwal","resource_state":3,"firstname":"samina","lastname":"chhatwal","city":"Falls
         Church","state":"Virginia","country":"United States","sex":"F","premium":false,"created_at":"2016-08-28T19:21:32Z","updated_at":"2016-08-30T15:59:36Z","badge_type_id":0,"profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/17214024/4854019/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/17214024/4854019/1/large.jpg","friend":null,"follower":null,"follower_count":0,"friend_count":0,"mutual_friend_count":0,"athlete_type":0,"date_preference":"%m/%d/%Y","measurement_preference":"feet","clubs":[],"email":"csaminak@yahoo.com","ftp":null,"weight":0.0,"bikes":[],"shoes":[]}}'
     http_version:
   recorded_at: Tue, 30 Aug 2016 20:16:38 GMT
